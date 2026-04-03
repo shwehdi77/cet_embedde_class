@@ -1,0 +1,18 @@
+#include <Servo.h>
+Servo window; 
+void setup() {
+  Serial.begin(9600);
+  window.attach(9); 
+}
+void loop() {
+  int analog_in=analogRead(A0);
+  Serial.print("Potentiometer readings =");
+  Serial.println(analog_in);
+  int temp = map(analog_in,0,1023,0,50);
+  Serial.print("Temperature =");
+  Serial.println(temp);
+  int angle = map(temp,0,50,0,180);
+  Serial.println(angle);
+  Serial.print("Servo angle =");
+  window.write(angle);
+}
