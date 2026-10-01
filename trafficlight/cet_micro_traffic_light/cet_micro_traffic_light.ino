@@ -11,16 +11,16 @@ void setup() {
   pinMode(Y_led, OUTPUT);
   pinMode(G_led, OUTPUT);
   pinMode(button, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(2), Pedestrian, RISING);
+  //attachInterrupt(digitalPinToInterrupt(2), Pedestrian, RISING);
 }
-void Pedestrian(){
+/*void Pedestrian(){
   red_delay=2000;
 
-}
+}*/
 // the loop function runs over and over again forever
 void loop() {
   byte b_press=digitalRead(button);
-  //if(!b_press){red_delay=2000;}
+  if(!b_press){red_delay=2000;}
 
   digitalWrite(R_led, HIGH); 
   digitalWrite(Y_led, LOW); 
