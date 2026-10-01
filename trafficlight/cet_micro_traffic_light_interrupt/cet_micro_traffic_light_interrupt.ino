@@ -15,11 +15,9 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(2), Pedestrian, RISING);
 }
 void Pedestrian(){
-  unsigned long currentTime = millis();
-  
-  if (currentTime - lastDebounceTime > debounceDelay) {
+ 
     red_delay=2000;
-    lastDebounceTime = currentTime;
+   
   }
   
 
